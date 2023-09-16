@@ -1,0 +1,16 @@
+﻿@model EastCoastAdmin.Models.TeacherViewModel;
+
+@{
+    ViewData["Title"] = "Detaljvy lärare";
+}
+
+<div>
+    <h2>@Html.DisplayFor(modelItem => Model.FirstName) @Html.DisplayFor(modelItem => Model.LastName)</h2>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.Email)</b>: @Html.DisplayFor(modelItem => Model.Email)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.MobilePhone)</b>: @Html.DisplayFor(modelItem => Model.MobilePhone)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.Address)</b>: @Html.DisplayFor(modelItem => Model.Address)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.Competence)</b>: @Html.DisplayFor(modelItem => Model.Competence)</p>
+
+    @Html.ActionLink("Tillbaka till lärarlistan", "Index", "Teachers")
+
+</div>

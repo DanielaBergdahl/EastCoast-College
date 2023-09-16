@@ -1,0 +1,50 @@
+﻿@model EastCoastAdmin.Models.StudentViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StudentId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MobilePhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MobilePhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Current courses</h4>
+    <ul>
+        @if (Model.CurrentCourses != null)
+        {
+            @foreach (var course in Model.CurrentCourses)
+            {
+                <li>@course.CourseTitle</li>
+            }
+        }
+    </ul>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index", "Students")
+</div>

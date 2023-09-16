@@ -1,0 +1,16 @@
+﻿@model EastCoastAdmin.Models.CourseViewModel;
+
+@{
+    ViewData["Title"] = "Kursdetaljer";
+}
+
+<div>
+    <h2>@Html.DisplayFor(modelItem => Model.CourseTitle) (@Html.DisplayFor(modelItem => Model.CourseNumber))</h2>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.CourseLength)</b>: @Html.DisplayFor(modelItem => Model.CourseLength)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.Category)</b>: @Html.DisplayFor(modelItem => Model.Category)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.CourseDescription)</b>: @Html.DisplayFor(modelItem => Model.CourseDescription)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.CourseDetails)</b>: @Html.DisplayFor(modelItem => Model.CourseDetails)</p>
+
+    @Html.ActionLink("Tillbaka till kurslistan", "Index", "Courses")
+
+</div>

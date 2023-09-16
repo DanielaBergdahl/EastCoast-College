@@ -1,0 +1,56 @@
+﻿@model EastCoastAdmin.Models.CourseViewModel
+
+@{
+    ViewData["Title"] = "Lägg till kurs";
+}
+
+<h3>Lägg till kurs</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseNumber" class="control-label"></label>
+                <input asp-for="CourseNumber" class="form-control" />
+                <span asp-validation-for="CourseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseTitle" class="control-label"></label>
+                <input asp-for="CourseTitle" class="form-control" />
+                <span asp-validation-for="CourseTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLength" class="control-label"></label>
+                <input asp-for="CourseLength" class="form-control" />
+                <span asp-validation-for="CourseLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseDescription" class="control-label"></label>
+                <input asp-for="CourseDescription" class="form-control" />
+                <span asp-validation-for="CourseDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseDetails" class="control-label"></label>
+                <input asp-for="CourseDetails" class="form-control" />
+                <span asp-validation-for="CourseDetails" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Spara" class="btn btn-primary" onClick="this.form.submit(); this.disabled=true; this.value='Sparar…'; " />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Tillbaka till kurslistan", "Index", "Courses")
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,30 @@
+﻿@model EastCoastAdmin.Models.CourseViewModel;
+
+@{
+    ViewData["Title"] = "Kursdetaljer";
+}
+
+<div>
+    <h2>Kursinformation för kurs: @Html.DisplayFor(modelItem => Model.CourseTitle)</h2>
+    <br />
+    <p><b>@Html.DisplayNameFor(model => model.CourseNumber):</b> @Html.DisplayFor(modelItem => Model.CourseNumber)</p>
+    <p><b>@Html.DisplayNameFor(model => model.CourseLength):</b> @Html.DisplayFor(modelItem => Model.CourseLength)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.Category):</b> @Html.DisplayFor(modelItem => Model.Category)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.CourseDescription):</b> @Html.DisplayFor(modelItem => Model.CourseDescription)</p>
+    <p><b>@Html.DisplayNameFor(modelItem => Model.CourseDetails):</b> @Html.DisplayFor(modelItem => Model.CourseDetails)</p>
+    <br />
+</div>
+<div>
+    <h4>Kursregistrering</h4>
+
+
+    <form action="/Home/SignUpForCourse/" method="post">
+            @Html.HiddenFor(m => m.CourseId)
+            @Html.DropDownList("studentId", Model.EligibleStudents, "<Välj ditt namn i listan>")
+        <input id="Submit" type="submit" value="Registrera mig" onClick="this.form.submit(); this.disabled=true; this.value='Sparar…'; " />
+    </form>
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Tillbaka till kurslistan", "Index", "Home")
+</div>
